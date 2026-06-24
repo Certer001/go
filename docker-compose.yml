@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  go-server:
+    build: .                 # Говорим Docker собрать образ из текущей папки (по Dockerfile)
+    container_name: my_go_hello_server
+    ports:
+      - "4321:4321"          # Пробрасываем порт: "внешний_порт:внутренний_порт"
+    restart: always          # Если сервер упадет или перезагрузится хост, Docker поднимет его сам
